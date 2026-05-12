@@ -1,0 +1,308 @@
+/* Floating action button on text selection */
+.iqa-ask-btn {
+  position: absolute;
+  z-index: 99999;
+  background: #10a37f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  transition: background .15s;
+  white-space: nowrap;
+  line-height: 1.6;
+}
+.iqa-ask-btn:hover {
+  background: #0d8c6d;
+}
+
+/* Inline question input popup */
+.iqa-input-popup {
+  position: relative;
+  z-index: 99998;
+  margin: 8px 0;
+  background: #f7f7f8;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.iqa-input-popup .iqa-context-preview {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 8px;
+  padding: 6px 8px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  max-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iqa-input-popup .iqa-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.iqa-input-popup textarea {
+  flex: 1;
+  resize: none;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  min-height: 36px;
+  max-height: 120px;
+  line-height: 1.4;
+  background: #fff;
+}
+.iqa-input-popup textarea:focus {
+  border-color: #10a37f;
+}
+
+.iqa-input-popup .iqa-send-btn {
+  background: #10a37f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .15s;
+}
+.iqa-input-popup .iqa-send-btn:hover {
+  background: #0d8c6d;
+}
+.iqa-input-popup .iqa-send-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.iqa-input-popup .iqa-cancel-btn {
+  background: transparent;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background .15s;
+}
+.iqa-input-popup .iqa-cancel-btn:hover {
+  background: #e5e7eb;
+}
+
+/* Inline QA annotation card */
+.iqa-card {
+  position: relative;
+  margin: 10px 0;
+  border-left: 3px solid #10a37f;
+  background: linear-gradient(135deg, #f0fdf8, #f7f7f8);
+  border-radius: 0 10px 10px 0;
+  padding: 12px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  animation: iqa-fade-in .25s ease;
+}
+
+@keyframes iqa-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.iqa-card .iqa-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.iqa-card .iqa-card-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: #10a37f;
+}
+
+.iqa-card .iqa-card-close {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 2px;
+  line-height: 1;
+  transition: color .15s;
+}
+.iqa-card .iqa-card-close:hover {
+  color: #ef4444;
+}
+
+.iqa-card .iqa-card-q {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 6px;
+  padding: 4px 8px;
+  background: rgba(0,0,0,.03);
+  border-radius: 6px;
+}
+.iqa-card .iqa-card-q strong {
+  color: #374151;
+}
+
+.iqa-card .iqa-card-a {
+  color: #1f2937;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.iqa-card .iqa-card-a p {
+  margin: 0 0 8px;
+}
+.iqa-card .iqa-card-a p:last-child {
+  margin-bottom: 0;
+}
+
+.iqa-card .iqa-card-a code {
+  background: #e5e7eb;
+  padding: 1px 4px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.iqa-card .iqa-card-a pre {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 10px 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 13px;
+  margin: 8px 0;
+}
+
+.iqa-card .iqa-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.iqa-card .iqa-loading .iqa-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #d1d5db;
+  border-top-color: #10a37f;
+  border-radius: 50%;
+  animation: iqa-spin .6s linear infinite;
+}
+
+@keyframes iqa-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Collapse/expand toggle */
+.iqa-card .iqa-toggle-btn {
+  background: none;
+  border: none;
+  color: #10a37f;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 0;
+  margin-top: 4px;
+}
+
+.iqa-card.iqa-collapsed .iqa-card-a,
+.iqa-card.iqa-collapsed .iqa-card-q {
+  display: none;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .iqa-input-popup {
+    background: #2d2d2d;
+    border-color: #4a4a4a;
+  }
+  .iqa-input-popup .iqa-context-preview {
+    background: #3a3a3a;
+    color: #a0a0a0;
+  }
+  .iqa-input-popup textarea {
+    background: #1e1e1e;
+    border-color: #4a4a4a;
+    color: #e0e0e0;
+  }
+  .iqa-card {
+    background: linear-gradient(135deg, #1a2e26, #2d2d2d);
+  }
+  .iqa-card .iqa-card-q {
+    background: rgba(255,255,255,.05);
+    color: #a0a0a0;
+  }
+  .iqa-card .iqa-card-q strong {
+    color: #d0d0d0;
+  }
+  .iqa-card .iqa-card-a {
+    color: #e0e0e0;
+  }
+  .iqa-card .iqa-card-a code {
+    background: #3a3a3a;
+  }
+}
+
+/* Also detect ChatGPT's own dark mode via class on html/body */
+html.dark .iqa-input-popup,
+.dark .iqa-input-popup {
+  background: #2d2d2d;
+  border-color: #4a4a4a;
+}
+html.dark .iqa-input-popup .iqa-context-preview,
+.dark .iqa-input-popup .iqa-context-preview {
+  background: #3a3a3a;
+  color: #a0a0a0;
+}
+html.dark .iqa-input-popup textarea,
+.dark .iqa-input-popup textarea {
+  background: #1e1e1e;
+  border-color: #4a4a4a;
+  color: #e0e0e0;
+}
+html.dark .iqa-input-popup .iqa-cancel-btn,
+.dark .iqa-input-popup .iqa-cancel-btn {
+  border-color: #4a4a4a;
+  color: #a0a0a0;
+}
+html.dark .iqa-card,
+.dark .iqa-card {
+  background: linear-gradient(135deg, #1a2e26, #2d2d2d);
+}
+html.dark .iqa-card .iqa-card-q,
+.dark .iqa-card .iqa-card-q {
+  background: rgba(255,255,255,.05);
+  color: #a0a0a0;
+}
+html.dark .iqa-card .iqa-card-q strong,
+.dark .iqa-card .iqa-card-q strong {
+  color: #d0d0d0;
+}
+html.dark .iqa-card .iqa-card-a,
+.dark .iqa-card .iqa-card-a {
+  color: #e0e0e0;
+}
+html.dark .iqa-card .iqa-card-a code,
+.dark .iqa-card .iqa-card-a code {
+  background: #3a3a3a;
+}
